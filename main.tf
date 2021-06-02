@@ -44,7 +44,7 @@ resource "aws_security_group" "my-sg" {
   }
 }
 
-resource "aws_instance" "my-instance" {
+resource "aws_instance" "Terraform Dblocks" {
   ami             = data.aws_ssm_parameter.ami_id.value
   subnet_id       = module.vpc.public_subnets[0]
   instance_type   = "t2.micro"
