@@ -47,6 +47,6 @@ resource "aws_security_group" "my-sg" {
 resource "aws_instance" "my-instance" {
   ami             = data.aws_ssm_parameter.ami_id.value
   subnet_id       = module.vpc.public_subnets[0]
-  instance_type   = "t3.micro"
+  instance_type   = "t2.micro"
   security_groups = [aws_security_group.my-sg.id]
   user_data       = fileexists("script.sh") ? file("script.sh") : null
